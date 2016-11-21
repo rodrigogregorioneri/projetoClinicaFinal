@@ -1,0 +1,109 @@
+package app.business;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import app.dao.*;
+import app.entity.*;
+
+
+
+/**
+ * Classe que representa a camada de negócios de tb_pacienteBusiness
+ * 
+ * @generated
+ **/
+@Service("tb_pacienteBusiness")
+public class tb_pacienteBusiness {
+
+
+    /**
+     * Instância da classe tb_pacienteDAO que faz o acesso ao banco de dados
+     * 
+     * @generated
+     */
+    @Autowired
+    @Qualifier("tb_pacienteDAO")
+    protected tb_pacienteDAO repository;
+
+    // CRUD
+
+    /**
+     * Serviço exposto para novo registro de acordo com a entidade fornecida
+     * 
+     * @generated
+     */
+    public tb_paciente post(final tb_paciente entity) throws Exception {
+      // begin-user-code  
+      // end-user-code  
+        repository.save(entity);
+      // begin-user-code  
+      // end-user-code  
+      return entity;
+    }
+
+    /**
+     * Serviço exposto para recuperar a entidade de acordo com o id fornecido
+     * 
+     * @generated
+     */
+    public tb_paciente get(java.lang.String id_paciente) throws Exception {
+      // begin-user-code  
+      // end-user-code        
+       tb_paciente result = repository.findOne(id_paciente);
+      // begin-user-code  
+      // end-user-code        
+      return result;
+    }
+
+    /**
+     * Serviço exposto para salvar alterações de acordo com a entidade fornecida
+     * 
+     * @generated
+     */
+    public tb_paciente put(final tb_paciente entity) throws Exception {
+      // begin-user-code  
+      // end-user-code
+        repository.saveAndFlush(entity);
+      // begin-user-code  
+      // end-user-code        
+      return entity;
+    }
+
+    /**
+     * Serviço exposto para remover a entidade de acordo com o id fornecido
+     * 
+     * @generated
+     */
+    public void delete( java.lang.String id_paciente) throws Exception {
+      // begin-user-code  
+      // end-user-code        
+      repository.delete(id_paciente);
+      // begin-user-code  
+      // end-user-code        
+    }
+
+    // CRUD
+    
+  /**
+   * Lista com paginação de acordo com a NamedQuery
+   * 
+   * @generated
+   */
+  public Page<tb_paciente> list ( Pageable pageable ){
+    // begin-user-code  
+    // end-user-code        
+    Page<tb_paciente> result = repository.list (  pageable );
+    // begin-user-code  
+    // end-user-code        
+    return result;
+  }
+    
+    
+
+
+
+}

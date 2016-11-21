@@ -1,0 +1,7 @@
+{
+  "directory": "plugins/",
+  "analytics": false,
+  "resolvers": [
+    "bower-npm-resolver"
+  ]
+}

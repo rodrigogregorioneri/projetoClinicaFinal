@@ -1,0 +1,220 @@
+<h3 class="">Novo Endereço</h3>
+
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
+   <datasource name="tb_endereco" entity="api/rest/tb_endereco" keys="id_endereco" rows-per-page="100" delete-message="Deseja remover?" class=""></datasource> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-button" id="crn-button-564202"> 
+  <button class="btn btn-primary" type="submit" onclick="" ng-click="tb_endereco.startInserting()" ng-hide="tb_endereco.inserting || tb_endereco.editing"><i class="fa fa-user"></i> <span class="">{{"template.crud.new" | translate}}</span></button> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-tb_endereco"> 
+  <div crn-datasource="tb_endereco" class="" ng-hide="tb_endereco.editing || tb_endereco.inserting"> 
+    <table class="table  table-bordered table-hover table-striped"> 
+      <thead> 
+        <tr class="table-header"> 
+          <th class=""> 
+            <div class="">Id _endereco</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nm _logradouro</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nr _residencia</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nm _bairro</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nr _cep</div>
+          </th> 
+          <th class=""> 
+            <div class="">Ds _complemento</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nm _cidade</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nm _estado</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nm _pais</div>
+          </th> 
+          <th class=""> 
+          <div class="">{{"template.crud.actions" | translate}}</div>
+          </th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.id_endereco}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nm_logradouro}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nr_residencia}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nm_bairro}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nr_cep}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.ds_complemento}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nm_cidade}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nm_estado}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nm_pais}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class=""> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i></button> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button> 
+            </div></td> 
+        </tr> 
+      </tbody> 
+    </table> 
+    <div class="table-footer-controls"> 
+      <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">{{"template.crud.load_more" | translate}}...</button> 
+    </div> 
+  </div> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-form-tb_endereco"> 
+  <div class="form" ng-show="tb_endereco.editing || tb_endereco.inserting"> 
+    <form crn-datasource="tb_endereco" class=""> 
+      <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting"> 
+        <button class="btn btn-primary" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button> 
+        <button class="btn btn-success" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button> 
+        <button class="btn btn-primary" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button> 
+      </div> 
+      <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <button class="btn btn-success" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+        <button class="btn btn-danger" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+      </div> 
+      <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nm_logradouro"> 
+          <div class="form-group"> 
+            <label for="textinput-nm_logradouro" class="">Nm _logradouro</label> 
+
+        <input type="text" ng-model="tb_endereco.active.nm_logradouro" class="form-control" id="textinput-nm_logradouro" placeholder="Nm _logradouro" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nr_residencia"> 
+          <div class="form-group"> 
+            <label for="textinput-nr_residencia" class="">Nr _residencia</label> 
+
+        <input type="number" ng-model="tb_endereco.active.nr_residencia" class="form-control" id="textinput-nr_residencia" placeholder="Nr _residencia" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nm_bairro"> 
+          <div class="form-group"> 
+            <label for="textinput-nm_bairro" class="">Nm _bairro</label> 
+
+        <input type="text" ng-model="tb_endereco.active.nm_bairro" class="form-control" id="textinput-nm_bairro" placeholder="Nm _bairro" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nr_cep"> 
+          <div class="form-group"> 
+            <label for="textinput-nr_cep" class="">Nr _cep</label> 
+
+        <input type="number" ng-model="tb_endereco.active.nr_cep" class="form-control" id="textinput-nr_cep" placeholder="Nr _cep" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-ds_complemento"> 
+          <div class="form-group"> 
+            <label for="textinput-ds_complemento" class="">Ds _complemento</label> 
+
+        <input type="text" ng-model="tb_endereco.active.ds_complemento" class="form-control" id="textinput-ds_complemento" placeholder="Ds _complemento" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nm_cidade"> 
+          <div class="form-group"> 
+            <label for="textinput-nm_cidade" class="">Nm _cidade</label> 
+
+        <input type="text" ng-model="tb_endereco.active.nm_cidade" class="form-control" id="textinput-nm_cidade" placeholder="Nm _cidade" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nm_estado"> 
+          <div class="form-group"> 
+            <label for="textinput-nm_estado" class="">Nm _estado</label> 
+
+        <input type="text" ng-model="tb_endereco.active.nm_estado" class="form-control" id="textinput-nm_estado" placeholder="Nm _estado" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nm_pais"> 
+          <div class="form-group"> 
+            <label for="textinput-nm_pais" class="">Nm _pais</label> 
+
+        <input type="text" ng-model="tb_endereco.active.nm_pais" class="form-control" id="textinput-nm_pais" placeholder="Nm _pais" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+      </fieldset> 
+    </form> 
+  </div> 
+</div> 
+<div class=""></div>

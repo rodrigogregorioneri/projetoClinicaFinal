@@ -1,0 +1,213 @@
+<h3 class="">Novo pedido de Estoque</h3>
+
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
+   <datasource name="tb_pedido" entity="api/rest/tb_pedido" keys="id_pedido" rows-per-page="100" delete-message="Deseja remover?" class=""></datasource> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-button" id="crn-button-564202"> 
+  <button class="btn btn-primary" type="submit" onclick="" ng-click="tb_pedido.startInserting()" ng-hide="tb_pedido.inserting || tb_pedido.editing"><i class="fa fa-user"></i> <span class="">{{"template.crud.new" | translate}}</span></button> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-tb_pedido"> 
+  <div crn-datasource="tb_pedido" class="" ng-hide="tb_pedido.editing || tb_pedido.inserting"> 
+    <table class="table  table-bordered table-hover table-striped"> 
+      <thead> 
+        <tr class="table-header"> 
+          <th class=""> 
+            <div class="">Id _pedido</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nr _pedido</div>
+          </th> 
+          <th class=""> 
+            <div class="">Dt _pedido</div>
+          </th> 
+          <th class=""> 
+            <div class="">Qtd _item</div>
+          </th> 
+          <th class=""> 
+            <div class="">Vl _unit _item</div>
+          </th> 
+          <th class=""> 
+            <div class="">Vl _pedido</div>
+          </th> 
+          <th class=""> 
+            <div class="">tb_fornecedor</div>
+          </th> 
+          <th class=""> 
+            <div class="">tb_item_estoque</div>
+          </th> 
+          <th class=""> 
+          <div class="">{{"template.crud.actions" | translate}}</div>
+          </th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.id_pedido}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nr_pedido}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.dt_pedido | date:'dd/MM/yyyy'}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.qtd_item}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.vl_unit_item}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.vl_pedido}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                {{rowData.tb_fornecedor.nm_razao_social}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                {{rowData.tb_item_estoque.nm_item}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class=""> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i></button> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button> 
+            </div></td> 
+        </tr> 
+      </tbody> 
+    </table> 
+    <div class="table-footer-controls"> 
+      <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">{{"template.crud.load_more" | translate}}...</button> 
+    </div> 
+  </div> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-form-tb_pedido"> 
+  <div class="form" ng-show="tb_pedido.editing || tb_pedido.inserting"> 
+    <form crn-datasource="tb_pedido" class=""> 
+      <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting"> 
+        <button class="btn btn-primary" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button> 
+        <button class="btn btn-success" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button> 
+        <button class="btn btn-primary" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button> 
+      </div> 
+      <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <button class="btn btn-success" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+        <button class="btn btn-danger" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+      </div> 
+      <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nr_pedido"> 
+          <div class="form-group"> 
+            <label for="textinput-nr_pedido" class="">Nr _pedido</label> 
+
+        <input type="number" ng-model="tb_pedido.active.nr_pedido" class="form-control" id="textinput-nr_pedido" placeholder="Nr _pedido" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-dt_pedido"> 
+          <div class="form-group"> 
+            <label for="textinput-dt_pedido" class="">Dt _pedido</label> 
+
+        <div style="position:relative">
+          <input type="text" as-date="" format="DD/MM/YYYY" ng-model="tb_pedido.active.dt_pedido" class="form-control" id="textinput-dt_pedido" placeholder="Dt _pedido" required="required">
+        </div>
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-qtd_item"> 
+          <div class="form-group"> 
+            <label for="textinput-qtd_item" class="">Qtd _item</label> 
+
+        <input type="text" ng-model="tb_pedido.active.qtd_item" class="form-control" id="textinput-qtd_item" placeholder="Qtd _item" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-vl_unit_item"> 
+          <div class="form-group"> 
+            <label for="textinput-vl_unit_item" class="">Vl _unit _item</label> 
+
+        <input type="text" ng-model="tb_pedido.active.vl_unit_item" class="form-control" id="textinput-vl_unit_item" placeholder="Vl _unit _item" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-vl_pedido"> 
+          <div class="form-group"> 
+            <label for="textinput-vl_pedido" class="">Vl _pedido</label> 
+
+        <input type="text" ng-model="tb_pedido.active.vl_pedido" class="form-control" id="textinput-vl_pedido" placeholder="Vl _pedido" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-tb_fornecedor"> 
+          <div class="form-group"> 
+            <label for="textinput-tb_fornecedor" class="">tb_fornecedor</label> 
+
+
+  <datasource name="tb_fornecedor" entity="api/rest/tb_fornecedor" keys="id_fornecedor" class="" dependent-by="{{tb_pedido}}"></datasource> 
+  <select ng-model="tb_pedido.active.tb_fornecedor" class="form-control" id="textinput-tb_fornecedor" ng-options="opt as opt.nm_razao_social for opt in tb_fornecedor.data track by opt.id_fornecedor">
+    <option value="">None</option>
+  </select>
+
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-tb_item_estoque"> 
+          <div class="form-group"> 
+            <label for="textinput-tb_item_estoque" class="">tb_item_estoque</label> 
+
+
+  <datasource name="tb_item_estoque" entity="api/rest/tb_item_estoque" keys="id_item" class="" dependent-by="{{tb_pedido}}"></datasource> 
+  <select ng-model="tb_pedido.active.tb_item_estoque" class="form-control" id="textinput-tb_item_estoque" ng-options="opt as opt.nm_item for opt in tb_item_estoque.data track by opt.id_item">
+    <option value="">None</option>
+  </select>
+
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+      </fieldset> 
+    </form> 
+  </div> 
+</div> 
+<div class=""></div>

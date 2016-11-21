@@ -1,0 +1,231 @@
+<h3 class="">Contas a Pagar</h3>
+
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
+   <datasource name="tb_conta_pagar" entity="api/rest/tb_conta_pagar" keys="id_cnt_pag" rows-per-page="100" delete-message="Deseja remover?" class=""></datasource> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-button" id="crn-button-564202"> 
+  <button class="btn btn-primary" type="submit" onclick="" ng-click="tb_conta_pagar.startInserting()" ng-hide="tb_conta_pagar.inserting || tb_conta_pagar.editing"><i class="fa fa-user"></i> <span class="">{{"template.crud.new" | translate}}</span></button> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-tb_conta_pagar"> 
+  <div crn-datasource="tb_conta_pagar" class="" ng-hide="tb_conta_pagar.editing || tb_conta_pagar.inserting"> 
+    <table class="table  table-bordered table-hover table-striped"> 
+      <thead> 
+        <tr class="table-header"> 
+          <th class=""> 
+            <div class="">Id _cnt _pag</div>
+          </th> 
+          <th class=""> 
+            <div class="">Tb _fornecedor</div>
+          </th> 
+          <th class=""> 
+            <div class="">Dt _emissao</div>
+          </th> 
+          <th class=""> 
+            <div class="">Dt _vencimento</div>
+          </th> 
+          <th class=""> 
+            <div class="">Dt _pgto</div>
+          </th> 
+          <th class=""> 
+            <div class="">Vl _conta</div>
+          </th> 
+          <th class=""> 
+            <div class="">Vl _juros</div>
+          </th> 
+          <th class=""> 
+            <div class="">Ds _status</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nr _doc</div>
+          </th> 
+          <th class=""> 
+          <div class="">{{"template.crud.actions" | translate}}</div>
+          </th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.id_cnt_pag}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                {{rowData.tb_fornecedor.nm_razao_social}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.dt_emissao | date:'dd/MM/yyyy'}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.dt_vencimento | date:'dd/MM/yyyy'}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.dt_pgto | date:'dd/MM/yyyy'}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.vl_conta}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.vl_juros}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.ds_status}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nr_doc}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class=""> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i></button> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button> 
+            </div></td> 
+        </tr> 
+      </tbody> 
+    </table> 
+    <div class="table-footer-controls"> 
+      <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">{{"template.crud.load_more" | translate}}...</button> 
+    </div> 
+  </div> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-form-tb_conta_pagar"> 
+  <div class="form" ng-show="tb_conta_pagar.editing || tb_conta_pagar.inserting"> 
+    <form crn-datasource="tb_conta_pagar" class=""> 
+      <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting"> 
+        <button class="btn btn-primary" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button> 
+        <button class="btn btn-success" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button> 
+        <button class="btn btn-primary" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button> 
+      </div> 
+      <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <button class="btn btn-success" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+        <button class="btn btn-danger" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+      </div> 
+      <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-tb_fornecedor"> 
+          <div class="form-group"> 
+            <label for="textinput-tb_fornecedor" class="">Tb _fornecedor</label> 
+
+
+  <datasource name="Tb _fornecedor" entity="api/rest/tb_fornecedor" keys="id_fornecedor" class="" dependent-by="{{tb_conta_pagar}}"></datasource> 
+  <select ng-model="tb_conta_pagar.active.tb_fornecedor" class="form-control" id="textinput-tb_fornecedor" ng-options="opt as opt.nm_razao_social for opt in Tb _fornecedor.data track by opt.id_fornecedor">
+    <option value="">None</option>
+  </select>
+
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-dt_emissao"> 
+          <div class="form-group"> 
+            <label for="textinput-dt_emissao" class="">Dt _emissao</label> 
+
+        <div style="position:relative">
+          <input type="text" as-date="" format="DD/MM/YYYY" ng-model="tb_conta_pagar.active.dt_emissao" class="form-control" id="textinput-dt_emissao" placeholder="Dt _emissao" required="required">
+        </div>
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-dt_vencimento"> 
+          <div class="form-group"> 
+            <label for="textinput-dt_vencimento" class="">Dt _vencimento</label> 
+
+        <div style="position:relative">
+          <input type="text" as-date="" format="DD/MM/YYYY" ng-model="tb_conta_pagar.active.dt_vencimento" class="form-control" id="textinput-dt_vencimento" placeholder="Dt _vencimento" required="required">
+        </div>
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-dt_pgto"> 
+          <div class="form-group"> 
+            <label for="textinput-dt_pgto" class="">Dt _pgto</label> 
+
+        <div style="position:relative">
+          <input type="text" as-date="" format="DD/MM/YYYY" ng-model="tb_conta_pagar.active.dt_pgto" class="form-control" id="textinput-dt_pgto" placeholder="Dt _pgto" required="required">
+        </div>
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-vl_conta"> 
+          <div class="form-group"> 
+            <label for="textinput-vl_conta" class="">Vl _conta</label> 
+
+        <input type="text" ng-model="tb_conta_pagar.active.vl_conta" class="form-control" id="textinput-vl_conta" placeholder="Vl _conta" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-vl_juros"> 
+          <div class="form-group"> 
+            <label for="textinput-vl_juros" class="">Vl _juros</label> 
+
+        <input type="text" ng-model="tb_conta_pagar.active.vl_juros" class="form-control" id="textinput-vl_juros" placeholder="Vl _juros" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-ds_status"> 
+          <div class="form-group"> 
+            <label for="textinput-ds_status" class="">Ds _status</label> 
+
+        <input type="text" ng-model="tb_conta_pagar.active.ds_status" class="form-control" id="textinput-ds_status" placeholder="Ds _status" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nr_doc"> 
+          <div class="form-group"> 
+            <label for="textinput-nr_doc" class="">Nr _doc</label> 
+
+        <input type="text" ng-model="tb_conta_pagar.active.nr_doc" class="form-control" id="textinput-nr_doc" placeholder="Nr _doc" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+      </fieldset> 
+    </form> 
+  </div> 
+</div> 
+<div class=""></div>

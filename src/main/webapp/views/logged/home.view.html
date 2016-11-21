@@ -1,0 +1,62 @@
+<div class="component-holder ng-binding ng-scope" data-component="crn-navbar" id="crn-navbar-986427"> 
+  <nav class="navbar navbar-default"> 
+    <div class="container-fluid"> 
+      <div class="navbar-header"> 
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+        <a class="navbar-brand" href="javascript:void(0);"><img src="img/logo.png" style="max-height:30px; margin-top:-5px"> </a> 
+      </div> 
+      <div id="navbar" class="navbar-collapse collapse"> 
+        <ul class="nav navbar-nav" style="float:none"> 
+          <li class="dropdown component-holder" data-component=""> <a href="#/home" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-lg fa-home"></i> <span class="" ______content="{Home}" _________content="{{&quot;Home.view.Home&quot; | translate}}">Inicio</span> </a> </li> 
+          <li class="dropdown component-holder open" data-component="crn-menu-item" ng-if="session.root"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-users fa-lg"></i> <span class="" ______content="{Admin}" _________content="{{&quot;Home.view.Admin&quot; | translate}}">Admin</span> <span class="caret"></span> </a> 
+            <ul class="dropdown-menu"> 
+              <li><a href="#/home/admin/users" class="component-holder" data-component="crn-anchor" ______content="{Users}" _________content="{{&quot;Home.view.Users&quot; | translate}}">Usuarios</a></li> 
+              <li><a href="#/home/admin/roles" class="component-holder" data-component="crn-anchor" ______content="{Roles}" _________content="{{&quot;Home.view.Roles&quot; | translate}}">Permissões</a></li> 
+            <li><a href="#/home/logged/tb_contato" class="component-holder" data-component="crn-anchor">Contato</a></li><li><a href="#/home/logged/tb_endereco" class="component-holder" data-component="crn-anchor">Endereço</a></li><li class="active"><a href="#/home/logged/tb_convenio" class="component-holder" data-component="crn-anchor">Convenio</a></li></ul> </li> 
+          <li class="dropdown component-holder navbar-right" data-component="crn-menu-item">  
+            <ul class="dropdown-menu"> 
+               
+            <li><a href="#" class="component-holder" data-component="crn-anchor">Action item</a></li></ul> </li> 
+          <li class="dropdown component-holder navbar-right" data-component="crn-menu-item"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <img class="user-avatar" alt="" ng-src="{{session.picture || 'img/nophoto.png'}}" style="max-height:18px;max-width:18px"> <span class="">{{session.name}}</span> <span class="caret"></span> </a> 
+            <ul class="dropdown-menu"> 
+              <li><a class="component-holder" data-toggle="modal" data-target="#modalPassword" data-component="crn-anchor" ______content="{ChangePassword}" _________content="{{&quot;Home.view.ChangePassword&quot; | translate}}">{ChangePassword}</a></li> 
+              <li ng-click="logout()"><a href="javascript:void(0);"><span class="" ______content="{Logout}" _________content="{{&quot;Home.view.Logout&quot; | translate}}">{Logout}</span></a></li> 
+            </ul> </li> 
+        <li class="dropdown component-holder" data-component="crn-menu-item"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="">Financeiro</span> <span class="caret"></span></a> <ul class="dropdown-menu">   <li class="active"><a href="#/home/logged/tb_conta_pagar" class="component-holder" data-component="crn-anchor">Contas a Pagar</a></li> <li><a href="#/home/logged/tb_conta_receber" class="component-holder" data-component="crn-anchor">Contas a Receber</a></li></ul></li><li class="dropdown component-holder" data-component="crn-menu-item"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="">Paciente</span> <span class="caret"></span></a> <ul class="dropdown-menu">   <li class="active"><a href="#/home/logged/tb_consulta" class="component-holder" data-component="crn-anchor">Consulta</a></li> <li><a href="#/home/logged/tb_paciente" class="component-holder" data-component="crn-anchor">Paciente</a></li></ul></li><li class="dropdown component-holder" data-component="crn-menu-item"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="">Funcionario</span> <span class="caret"></span></a> <ul class="dropdown-menu">   <li class="active"><a href="#/home/logged/tb_funcionario" class="component-holder" data-component="crn-anchor">Funcionario</a></li> <li><a href="#/home/logged/tb_procedimento" class="component-holder" data-component="crn-anchor">Procedimento</a></li><li><a href="#/home/logged/tb_especialidade" class="component-holder" data-component="crn-anchor">Especialidade</a></li></ul></li><li class="dropdown component-holder" data-component="crn-menu-item"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="">Gerencia de Estoque</span> <span class="caret"></span></a> <ul class="dropdown-menu">   <li class="active"><a href="#/home/logged/tb_estoque" class="component-holder" data-component="crn-anchor">Estoque</a></li> <li><a href="#/home/logged/tb_est_entrada" class="component-holder" data-component="crn-anchor">Entrada</a></li><li><a href="#/home/logged/tb_est_saida" class="component-holder" data-component="crn-anchor">Saida</a></li><li><a href="#/home/logged/tb_pedido" class="component-holder" data-component="crn-anchor">Pedido ao fornecedor</a></li><li><a href="#/home/logged/tb_fornecedor" class="component-holder" data-component="crn-anchor">Fornecedor</a></li><li><a href="#/home/logged/tb_item_estoque" class="component-holder" data-component="crn-anchor">Itens de Estoque</a></li></ul></li></ul> 
+      </div> 
+    </div> 
+  </nav> 
+</div> 
+<div ui-view="" class="container-fluid main-view" data-container="true"> 
+</div> 
+<div class="modal fade" id="modalPassword"> 
+  <div class="modal-dialog"> 
+    <div class="modal-content"> 
+      <div class="modal-header"> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="{Close}" ___aria-label="{Close}" ______aria-label="{Close}" _________aria-label="{{'Home.view.Close' | translate}}"><span aria-hidden="true">×</span></button> 
+        <h4 class="modal-title" ______content="{ChangePassword}" _________content="{{&quot;Home.view.ChangePassword&quot; | translate}}">{ChangePassword}</h4> 
+      </div> 
+      <div class="modal-body"> 
+        <form class="form-validation" autocomplete="off" name="form" role="form"> 
+          <div class="text-danger wrapper text-center" ng-show="authError"> 
+          </div> 
+          <div class="list-group list-group-sm"> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control no-border" id="oldPassword" placeholder="{Old Password}" ___placeholder="{Old Password}" ______placeholder="{Old Password}" _________placeholder="{{'Home.view.Old Password' | translate}}"> 
+            </div> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control no-border" id="newPassword" placeholder="{New Password}" ___placeholder="{New Password}" ______placeholder="{New Password}" _________placeholder="{{'Home.view.New Password' | translate}}"> 
+            </div> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control no-border" id="newPasswordConfirmation" placeholder="{Confirmation}" ___placeholder="{Confirmation}" ______placeholder="{Confirmation}" _________placeholder="{{'Home.view.Confirmation' | translate}}"> 
+            </div> 
+          </div> 
+        </form> 
+      </div> 
+      <div class="modal-footer"> 
+        <button class="btn btn-primary" type="submit" ng-click="changePassword()" ng-disabled="form.$invalid || vm.dataLoading" ______content="{ChangePassword}" _________content="{{&quot;Home.view.ChangePassword&quot; | translate}}">{ChangePassword}</button> 
+        <button type="button" class="btn btn-default" data-dismiss="modal" ______content="{Close}" _________content="{{'Home.view.Close' | translate}}">{Close}</button> 
+      </div> 
+    </div> 
+  </div> 
+</div>

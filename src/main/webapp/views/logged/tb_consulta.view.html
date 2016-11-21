@@ -1,0 +1,218 @@
+<h3 class="">Nova Consulta</h3>
+
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
+   <datasource name="tb_consulta" entity="api/rest/tb_consulta" keys="id_consulta" rows-per-page="100" delete-message="Deseja remover?" class=""></datasource> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-button" id="crn-button-564202"> 
+  <button class="btn btn-primary" type="submit" onclick="" ng-click="tb_consulta.startInserting()" ng-hide="tb_consulta.inserting || tb_consulta.editing"><i class="fa fa-user"></i> <span class="">{{"template.crud.new" | translate}}</span></button> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-tb_consulta"> 
+  <div crn-datasource="tb_consulta" class="" ng-hide="tb_consulta.editing || tb_consulta.inserting"> 
+    <table class="table  table-bordered table-hover table-striped"> 
+      <thead> 
+        <tr class="table-header"> 
+          <th class=""> 
+            <div class="">Id _consulta</div>
+          </th> 
+          <th class=""> 
+            <div class="">Dt _consulta</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nm _acompanhante</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nr _rg _acomp</div>
+          </th> 
+          <th class=""> 
+            <div class="">Ds _consulta</div>
+          </th> 
+          <th class=""> 
+            <div class="">tb_paciente</div>
+          </th> 
+          <th class=""> 
+            <div class="">tb_procedimento</div>
+          </th> 
+          <th class=""> 
+            <div class="">tb_funcionario</div>
+          </th> 
+          <th class=""> 
+          <div class="">{{"template.crud.actions" | translate}}</div>
+          </th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.id_consulta}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.dt_consulta | date:'dd/MM/yyyy'}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nm_acompanhante}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nr_rg_acomp}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.ds_consulta}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                {{rowData.tb_paciente.nm_paciente}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                {{rowData.tb_procedimento.ds_procedimento}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                {{rowData.tb_funcionario.nm_funcionario}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class=""> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i></button> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button> 
+            </div></td> 
+        </tr> 
+      </tbody> 
+    </table> 
+    <div class="table-footer-controls"> 
+      <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">{{"template.crud.load_more" | translate}}...</button> 
+    </div> 
+  </div> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-form-tb_consulta"> 
+  <div class="form" ng-show="tb_consulta.editing || tb_consulta.inserting"> 
+    <form crn-datasource="tb_consulta" class=""> 
+      <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting"> 
+        <button class="btn btn-primary" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button> 
+        <button class="btn btn-success" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button> 
+        <button class="btn btn-primary" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button> 
+      </div> 
+      <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <button class="btn btn-success" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+        <button class="btn btn-danger" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+      </div> 
+      <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-dt_consulta"> 
+          <div class="form-group"> 
+            <label for="textinput-dt_consulta" class="">Dt _consulta</label> 
+
+        <div style="position:relative">
+          <input type="text" as-date="" format="DD/MM/YYYY" ng-model="tb_consulta.active.dt_consulta" class="form-control" id="textinput-dt_consulta" placeholder="Dt _consulta" required="required">
+        </div>
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nm_acompanhante"> 
+          <div class="form-group"> 
+            <label for="textinput-nm_acompanhante" class="">Nm _acompanhante</label> 
+
+        <input type="text" ng-model="tb_consulta.active.nm_acompanhante" class="form-control" id="textinput-nm_acompanhante" placeholder="Nm _acompanhante" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nr_rg_acomp"> 
+          <div class="form-group"> 
+            <label for="textinput-nr_rg_acomp" class="">Nr _rg _acomp</label> 
+
+        <input type="text" ng-model="tb_consulta.active.nr_rg_acomp" class="form-control" id="textinput-nr_rg_acomp" placeholder="Nr _rg _acomp" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-ds_consulta"> 
+          <div class="form-group"> 
+            <label for="textinput-ds_consulta" class="">Ds _consulta</label> 
+
+        <input type="text" ng-model="tb_consulta.active.ds_consulta" class="form-control" id="textinput-ds_consulta" placeholder="Ds _consulta" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-tb_paciente"> 
+          <div class="form-group"> 
+            <label for="textinput-tb_paciente" class="">tb_paciente</label> 
+
+
+  <datasource name="tb_paciente" entity="api/rest/tb_paciente" keys="id_paciente" class="" dependent-by="{{tb_consulta}}"></datasource> 
+  <select ng-model="tb_consulta.active.tb_paciente" class="form-control" id="textinput-tb_paciente" ng-options="opt as opt.nm_paciente for opt in tb_paciente.data track by opt.id_paciente">
+    <option value="">None</option>
+  </select>
+
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-tb_procedimento"> 
+          <div class="form-group"> 
+            <label for="textinput-tb_procedimento" class="">tb_procedimento</label> 
+
+
+  <datasource name="tb_procedimento" entity="api/rest/tb_procedimento" keys="id_procedimento" class="" dependent-by="{{tb_consulta}}"></datasource> 
+  <select ng-model="tb_consulta.active.tb_procedimento" class="form-control" id="textinput-tb_procedimento" ng-options="opt as opt.ds_procedimento for opt in tb_procedimento.data track by opt.id_procedimento">
+    <option value="">None</option>
+  </select>
+
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-tb_funcionario"> 
+          <div class="form-group"> 
+            <label for="textinput-tb_funcionario" class="">tb_funcionario</label> 
+
+
+  <datasource name="tb_funcionario" entity="api/rest/tb_funcionario" keys="id_funcionario" class="" dependent-by="{{tb_consulta}}"></datasource> 
+  <select ng-model="tb_consulta.active.tb_funcionario" class="form-control" id="textinput-tb_funcionario" ng-options="opt as opt.nm_funcionario for opt in tb_funcionario.data track by opt.id_funcionario">
+    <option value="">None</option>
+  </select>
+
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+      </fieldset> 
+    </form> 
+  </div> 
+</div> 
+<div class=""></div>

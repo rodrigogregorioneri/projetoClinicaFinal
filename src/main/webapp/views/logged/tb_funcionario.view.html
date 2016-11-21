@@ -1,0 +1,298 @@
+<h3 class="">Novo Funcionario</h3>
+
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
+   <datasource name="tb_funcionario" entity="api/rest/tb_funcionario" keys="id_funcionario" rows-per-page="100" delete-message="Deseja remover?" class=""></datasource> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-button" id="crn-button-564202"> 
+  <button class="btn btn-primary" type="submit" onclick="" ng-click="tb_funcionario.startInserting()" ng-hide="tb_funcionario.inserting || tb_funcionario.editing"><i class="fa fa-user"></i> <span class="">{{"template.crud.new" | translate}}</span></button> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-tb_funcionario"> 
+  <div crn-datasource="tb_funcionario" class="" ng-hide="tb_funcionario.editing || tb_funcionario.inserting"> 
+    <table class="table  table-bordered table-hover table-striped"> 
+      <thead> 
+        <tr class="table-header"> 
+          <th class=""> 
+            <div class="">Id _funcionario</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nm _funcionario</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nm _sobrenome</div>
+          </th> 
+          <th class=""> 
+            <div class="">Dt _nascimento</div>
+          </th> 
+          <th class=""> 
+            <div class="">Ds _sexo</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nr _rg</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nr _cpf</div>
+          </th> 
+          <th class=""> 
+            <div class="">Dt _admissao</div>
+          </th> 
+          <th class=""> 
+            <div class="">Dt _demissao</div>
+          </th> 
+          <th class=""> 
+            <div class="">tb_endereco</div>
+          </th> 
+          <th class=""> 
+            <div class="">tb_contato</div>
+          </th> 
+          <th class=""> 
+            <div class="">tb_especialidade</div>
+          </th> 
+          <th class=""> 
+          <div class="">{{"template.crud.actions" | translate}}</div>
+          </th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.id_funcionario}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nm_funcionario}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nm_sobrenome}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.dt_nascimento | date:'dd/MM/yyyy'}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.ds_sexo}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nr_rg}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nr_cpf}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.dt_admissao | date:'dd/MM/yyyy'}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.dt_demissao | date:'dd/MM/yyyy'}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                {{rowData.tb_endereco.nm_logradouro}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                {{rowData.tb_contato.nm_email}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                {{rowData.tb_especialidade.nm_especialidade}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class=""> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i></button> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button> 
+            </div></td> 
+        </tr> 
+      </tbody> 
+    </table> 
+    <div class="table-footer-controls"> 
+      <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">{{"template.crud.load_more" | translate}}...</button> 
+    </div> 
+  </div> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-form-tb_funcionario"> 
+  <div class="form" ng-show="tb_funcionario.editing || tb_funcionario.inserting"> 
+    <form crn-datasource="tb_funcionario" class=""> 
+      <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting"> 
+        <button class="btn btn-primary" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button> 
+        <button class="btn btn-success" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button> 
+        <button class="btn btn-primary" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button> 
+      </div> 
+      <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <button class="btn btn-success" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+        <button class="btn btn-danger" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+      </div> 
+      <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nm_funcionario"> 
+          <div class="form-group"> 
+            <label for="textinput-nm_funcionario" class="">Nm _funcionario</label> 
+
+        <input type="text" ng-model="tb_funcionario.active.nm_funcionario" class="form-control" id="textinput-nm_funcionario" placeholder="Nm _funcionario" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nm_sobrenome"> 
+          <div class="form-group"> 
+            <label for="textinput-nm_sobrenome" class="">Nm _sobrenome</label> 
+
+        <input type="text" ng-model="tb_funcionario.active.nm_sobrenome" class="form-control" id="textinput-nm_sobrenome" placeholder="Nm _sobrenome" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-dt_nascimento"> 
+          <div class="form-group"> 
+            <label for="textinput-dt_nascimento" class="">Dt _nascimento</label> 
+
+        <div style="position:relative">
+          <input type="text" as-date="" format="DD/MM/YYYY" ng-model="tb_funcionario.active.dt_nascimento" class="form-control" id="textinput-dt_nascimento" placeholder="Dt _nascimento" required="required">
+        </div>
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-ds_sexo"> 
+          <div class="form-group"> 
+            <label for="textinput-ds_sexo" class="">Ds _sexo</label> 
+
+        <input type="text" ng-model="tb_funcionario.active.ds_sexo" class="form-control" id="textinput-ds_sexo" placeholder="Ds _sexo" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nr_rg"> 
+          <div class="form-group"> 
+            <label for="textinput-nr_rg" class="">Nr _rg</label> 
+
+        <input type="text" ng-model="tb_funcionario.active.nr_rg" class="form-control" id="textinput-nr_rg" placeholder="Nr _rg" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nr_cpf"> 
+          <div class="form-group"> 
+            <label for="textinput-nr_cpf" class="">Nr _cpf</label> 
+
+        <input type="number" ng-model="tb_funcionario.active.nr_cpf" class="form-control" id="textinput-nr_cpf" placeholder="Nr _cpf" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-dt_admissao"> 
+          <div class="form-group"> 
+            <label for="textinput-dt_admissao" class="">Dt _admissao</label> 
+
+        <div style="position:relative">
+          <input type="text" as-date="" format="DD/MM/YYYY" ng-model="tb_funcionario.active.dt_admissao" class="form-control" id="textinput-dt_admissao" placeholder="Dt _admissao" required="required">
+        </div>
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-dt_demissao"> 
+          <div class="form-group"> 
+            <label for="textinput-dt_demissao" class="">Dt _demissao</label> 
+
+        <div style="position:relative">
+          <input type="text" as-date="" format="DD/MM/YYYY" ng-model="tb_funcionario.active.dt_demissao" class="form-control" id="textinput-dt_demissao" placeholder="Dt _demissao" required="required">
+        </div>
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-tb_endereco"> 
+          <div class="form-group"> 
+            <label for="textinput-tb_endereco" class="">tb_endereco</label> 
+
+
+  <datasource name="tb_endereco" entity="api/rest/tb_endereco" keys="id_endereco" class="" dependent-by="{{tb_funcionario}}"></datasource> 
+  <select ng-model="tb_funcionario.active.tb_endereco" class="form-control" id="textinput-tb_endereco" ng-options="opt as opt.nm_logradouro for opt in tb_endereco.data track by opt.id_endereco">
+    <option value="">None</option>
+  </select>
+
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-tb_contato"> 
+          <div class="form-group"> 
+            <label for="textinput-tb_contato" class="">tb_contato</label> 
+
+
+  <datasource name="tb_contato" entity="api/rest/tb_contato" keys="id_conato" class="" dependent-by="{{tb_funcionario}}"></datasource> 
+  <select ng-model="tb_funcionario.active.tb_contato" class="form-control" id="textinput-tb_contato" ng-options="opt as opt.nm_email for opt in tb_contato.data track by opt.id_conato">
+    <option value="">None</option>
+  </select>
+
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-tb_especialidade"> 
+          <div class="form-group"> 
+            <label for="textinput-tb_especialidade" class="">tb_especialidade</label> 
+
+
+  <datasource name="tb_especialidade" entity="api/rest/tb_especialidade" keys="id_esp" class="" dependent-by="{{tb_funcionario}}"></datasource> 
+  <select ng-model="tb_funcionario.active.tb_especialidade" class="form-control" id="textinput-tb_especialidade" ng-options="opt as opt.nm_especialidade for opt in tb_especialidade.data track by opt.id_esp">
+    <option value="">None</option>
+  </select>
+
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+      </fieldset> 
+    </form> 
+  </div> 
+</div> 
+<div class=""></div>

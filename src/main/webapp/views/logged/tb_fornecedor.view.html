@@ -1,0 +1,154 @@
+<h3 class="">Novo Fornecedor</h3>
+
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
+   <datasource name="tb_fornecedor" entity="api/rest/tb_fornecedor" keys="id_fornecedor" rows-per-page="100" delete-message="Deseja remover?" class=""></datasource> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-button" id="crn-button-564202"> 
+  <button class="btn btn-primary" type="submit" onclick="" ng-click="tb_fornecedor.startInserting()" ng-hide="tb_fornecedor.inserting || tb_fornecedor.editing"><i class="fa fa-user"></i> <span class="">{{"template.crud.new" | translate}}</span></button> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-tb_fornecedor"> 
+  <div crn-datasource="tb_fornecedor" class="" ng-hide="tb_fornecedor.editing || tb_fornecedor.inserting"> 
+    <table class="table  table-bordered table-hover table-striped"> 
+      <thead> 
+        <tr class="table-header"> 
+          <th class=""> 
+            <div class="">Id _fornecedor</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nm _razao _social</div>
+          </th> 
+          <th class=""> 
+            <div class="">Nr _cnpj</div>
+          </th> 
+          <th class=""> 
+            <div class="">tb_endereco</div>
+          </th> 
+          <th class=""> 
+            <div class="">tb_contato</div>
+          </th> 
+          <th class=""> 
+          <div class="">{{"template.crud.actions" | translate}}</div>
+          </th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.id_fornecedor}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nm_razao_social}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.nr_cnpj}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                {{rowData.tb_endereco.nm_logradouro}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                {{rowData.tb_contato.nm_email}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class=""> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i></button> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button> 
+            </div></td> 
+        </tr> 
+      </tbody> 
+    </table> 
+    <div class="table-footer-controls"> 
+      <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">{{"template.crud.load_more" | translate}}...</button> 
+    </div> 
+  </div> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-form-tb_fornecedor"> 
+  <div class="form" ng-show="tb_fornecedor.editing || tb_fornecedor.inserting"> 
+    <form crn-datasource="tb_fornecedor" class=""> 
+      <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting"> 
+        <button class="btn btn-primary" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button> 
+        <button class="btn btn-success" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button> 
+        <button class="btn btn-primary" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button> 
+      </div> 
+      <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <button class="btn btn-success" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+        <button class="btn btn-danger" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+      </div> 
+      <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nm_razao_social"> 
+          <div class="form-group"> 
+            <label for="textinput-nm_razao_social" class="">Nm _razao _social</label> 
+
+        <input type="text" ng-model="tb_fornecedor.active.nm_razao_social" class="form-control" id="textinput-nm_razao_social" placeholder="Nm _razao _social" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-nr_cnpj"> 
+          <div class="form-group"> 
+            <label for="textinput-nr_cnpj" class="">Nr _cnpj</label> 
+
+        <input type="number" ng-model="tb_fornecedor.active.nr_cnpj" class="form-control" id="textinput-nr_cnpj" placeholder="Nr _cnpj" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-tb_endereco"> 
+          <div class="form-group"> 
+            <label for="textinput-tb_endereco" class="">tb_endereco</label> 
+
+
+  <datasource name="tb_endereco" entity="api/rest/tb_endereco" keys="id_endereco" class="" dependent-by="{{tb_fornecedor}}"></datasource> 
+  <select ng-model="tb_fornecedor.active.tb_endereco" class="form-control" id="textinput-tb_endereco" ng-options="opt as opt.nm_logradouro for opt in tb_endereco.data track by opt.id_endereco">
+    <option value="">None</option>
+  </select>
+
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-tb_contato"> 
+          <div class="form-group"> 
+            <label for="textinput-tb_contato" class="">tb_contato</label> 
+
+
+  <datasource name="tb_contato" entity="api/rest/tb_contato" keys="id_conato" class="" dependent-by="{{tb_fornecedor}}"></datasource> 
+  <select ng-model="tb_fornecedor.active.tb_contato" class="form-control" id="textinput-tb_contato" ng-options="opt as opt.nm_email for opt in tb_contato.data track by opt.id_conato">
+    <option value="">None</option>
+  </select>
+
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+      </fieldset> 
+    </form> 
+  </div> 
+</div> 
+<div class=""></div>

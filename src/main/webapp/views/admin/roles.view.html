@@ -1,0 +1,115 @@
+<div class="container-fluid">
+	<h3 class="">{{'Roles.view.Roles' | translate}}</h3>
+	<div class="row">
+		<div class="col-xs-12">
+			<div
+				class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle"
+				data-component="crn-datasource" id="crn-datasource-906854">
+				<datasource name="Role" entity="/api/security/Role" keys="id"
+					rows-per-page="100" class=""></datasource>
+			</div>
+			<div
+				class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle"
+				data-component="crn-datasource" id="crn-datasource-807592">
+				<datasource name="AllRoles" entity="/api/security/Role"
+					keys="id" rows-per-page="10" class=""
+					reach-infinity="AllRoles.next()"></datasource>
+			</div>
+			<p></p>
+			<div ng-hide="Role.editing || Role.inserting"
+				class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle"
+				data-component="crn-button" id="crn-button-564202">
+				<button class="btn btn-primary btn-sm" type="submit"
+					ng-click="Role.startInserting()">
+					<i class="fa fa-lock"></i> <span>{{'Roles.view.Add New Role'
+						| translate}}</span>
+				</button>
+			</div>
+			<p></p>
+		</div>
+	</div>
+	<div class="row">
+		<div
+			class="col-xs-12 component-holder ng-binding ng-scope ui-draggable ui-draggable-handle"
+			data-component="crn-grid" id="crn-grid-852138"
+			ng-hide="Role.editing || Role.inserting">
+			<div crn-datasource="Role"
+				class="table-responsive panel panel-primary">
+				<table class="table  table-bordered table-hover">
+					<thead>
+						<tr class="table-header">
+							<th class="">
+								<div data-container="true" class="" draggable="true">
+									{{'Roles.view.Name' | translate}}</div>
+							</th>
+							<th>
+								<div data-container="true" class="" draggable="true">
+									{{'Roles.view.Actions' | translate}}</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="table-content" ng-repeat="rowData in datasource.data">
+							<td class="">
+								<div data-container="true" class="" draggable="true">
+									{{rowData.name}}</div>
+							</td>
+							<td>
+								<div data-container="true" class="" draggable="true">
+									<button class="btn btn-default btn-sm" type="submit"
+										ng-click="datasource.startEditing(rowData)">
+										<i class="fa fa-edit"></i><span class="">{{'Roles.view.Edit'
+											| translate}}</span>
+									</button>
+									<button class="btn btn-default btn-sm" type="submit"
+										ng-click="datasource.remove(rowData)">
+										<i class="fa fa-times"></i> <span>{{'Roles.view.Remove'
+											| translate}}</span>
+									</button>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="center-block">
+					<button class="btn btn-default btn-block btn-clicked"
+						ng-show="datasource.hasNextPage()"
+						ng-click="datasource.nextPage()">{{'Roles.view.Load More'
+						| translate}}...</button>
+				</div>
+			</div>
+		</div>
+		<div
+			class="col-xs-12 col-sm-5 component-holder ng-binding ng-scope ui-draggable ui-draggable-handle"
+			data-component="crn-form" id="crn-form-271576">
+			<div class="form">
+				<form crn-datasource="Role" ng-show="Role.editing || Role.inserting"
+					class="">
+					<fieldset
+						ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting">
+						<div
+							class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle"
+							data-component="crn-textinput" id="crn-textinput-327527">
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="">{{'Roles.view.Name'
+									| translate}}</label> <input type="text" ng-model="Role.active.name"
+									class="form-control" id="textinput-id"
+									placeholder="Placeholder text">
+							</div>
+						</div>
+					</fieldset>
+
+					<div class="active-bar pull-right"
+						ng-hide="!datasource.editing &amp;&amp; !datasource.inserting">
+						<button class="btn btn-success" ng-click="datasource.post()">
+							<i class="glyphicon glyphicon-ok"></i>
+						</button>
+						<button class="btn btn-danger" ng-click="datasource.cancel()">
+							<i class="glyphicon glyphicon-remove"></i>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
