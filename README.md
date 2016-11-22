@@ -7,7 +7,7 @@ p{display:none;}
 
 NOME: RODRIGO GREGORIO NERI   RGM: 135742-5 <BR>
 ----------------------------------------------
-<p>NOME: SÉRGIO SILVA FABEL      RGM: 1551653-9 
+<p style="display: none;">NOME: SÉRGIO SILVA FABEL      RGM: 1551653-9 
 ----------------------------------------------
 NOME: LUCAS DE SOUZA OLIVEIRA RGM: 1512364-2  
 ----------------------------------------------
